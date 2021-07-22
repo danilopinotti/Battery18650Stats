@@ -23,7 +23,6 @@ class Battery18650Stats {
   double getBatteryVolts();
 
  private:
-  bool _useConversionTable;
   int _adcPin;
   int _reads;
   double _conversionFactor;
