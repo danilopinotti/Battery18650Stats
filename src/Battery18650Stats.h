@@ -2,8 +2,8 @@
  *  18650 Ion-Li battery
  */
 
-#ifndef Battery18650Stats_H_
-#define Battery18650Stats_H_
+#ifndef Battery_18650_Stats_H
+#define Battery_18650_Stats_H
 
 #include "Arduino.h"
 
