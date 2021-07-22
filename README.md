@@ -33,7 +33,7 @@ Battery18650Stats(<adc_pin>, <conversion_factor>, <reads>);
 
 - `adc_pin` (optional): The ADC Pin that lib will read (analogRead) to calculate charge level. Can be obtained at device datasheet. Default Value: `35`;
 - `conversion_factor` (optional): Value used to convert ADC pin reading in real battery voltage. This value can be obtained through comparisons between code result and a voltmeter result. Default Value: `1.702`;
-- `reads` (optional): Quantity of reads to get an average of pin readings. Its used due pin reading instabilities. Default Value: `5`;
+- `reads` (optional): Quantity of reads to get an average of pin readings. Its used due pin reading instabilities. Default Value: `20`;
 
 After instantiation, we can obtain the charge level and current battery voltage.
 

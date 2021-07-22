@@ -9,7 +9,7 @@
 
 #define DEFAULT_PIN 35
 #define DEFAULT_CONVERSION_FACTOR 1.702
-#define DEFAULT_READS 5
+#define DEFAULT_READS 20
 
 class Battery18650Stats {
  public:
