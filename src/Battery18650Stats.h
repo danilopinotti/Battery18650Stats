@@ -29,7 +29,7 @@ class Battery18650Stats {
   double *_conversionTable = nullptr;
 
   void _initConversionTable();
-  int _getChargeLevel(double volts);
+  int _getChargeLevelFromConversionTable(double volts);
   int _calculateChargeLevel(double volts);
   int _avgAnalogRead(int pinNumber, int reads);
   double _analogReadToVolts(int readValue);
