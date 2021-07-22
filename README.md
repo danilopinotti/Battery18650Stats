@@ -12,7 +12,8 @@ This Lib theoretically compatible with any ESP that has ACP pins and a 18650 Bat
 
 ## Usage
 
-To use this Lib, you need to import and create an instance:
+### Import and setup
+To use this Lib, you need to import and setup:
 ```cpp
 #include <Battery18650Stats.h>
 
@@ -35,11 +36,19 @@ Battery18650Stats(<adc_pin>, <conversion_factor>, <reads>);
 - `conversion_factor` (optional): Value used to convert ADC pin reading in real battery voltage. This value can be obtained through comparisons between code result and a voltmeter result. Default Value: `1.702`;
 - `reads` (optional): Quantity of reads to get an average of pin readings. Its used due pin reading instabilities. Default Value: `20`;
 
-After instantiation, we can obtain the charge level and current battery voltage.
+### Methods
 
-- Method `double getBatteryVolts()`: Returns the current battery voltage;
-- Method `int getBatteryChargeLevel(bool useConversionTable = false)`: Returns the current battery charge level;
-    - The parameter `bool useConversionTable` indicates if the internal charge level will be obtained through a formula, or a predefined conversion table. Using predefined conversion table, the lib will consume more RAM than using the formula.
+After the installation and instantiation, we are able to obtain the charge level and current battery voltage.
+
+#### Method `double getBatteryVolts()`
+Returns the current battery voltage.
+
+#### Method `int getBatteryChargeLevel(bool useConversionTable = false)`
+Returns the current battery charge level.
+  - Parameter `bool useConversionTable`: Indicates if the internal charge level will be obtained using the internal predefined conversion table instead the formula (default). Default value: `false`
+> Attention! Using predefined conversion table will consume more RAM than using the formula.
+
+### Usage example
 ```cpp
 #include <Battery18650Stats.h>
 
@@ -55,6 +64,10 @@ void setup() {
   
   Serial.print("Charge level (using the reference table): ");
   Serial.println(battery.getBatteryChargeLevel(true));
+}
+
+void loop {
+  //
 }
 ```
 
