@@ -71,7 +71,27 @@ void loop {
 }
 ```
 
-## Parameters and calibrations
+## Troubleshoot and Finding Conversion Factor
+Sometimes the result of `getBatteryChargeLevel` and `getBatteryVolts` may not represents the real state of the battery.
+
+There are two main problems that could be happening:
+- Your code is using the wrong ADC port or
+- Your code is using the wrong conversion factor.
+
+### Finding the right ADC port
+You can find the ADC ports in the device datasheet. The port can change according to the hardware you are using.
+
+### Finding the right conversion factor
+To find the right conversion factor you will need a voltmeter.
+
+Steps:
+1. Measure the voltage of the battery with the voltmeter
+2. Print the voltage obtained by the lib through `getBatteryVolts` method
+
+If the measurements (library and voltmeter) match, the conversion factor is right.
+If they are different, you will need to increment or decrement the conversion factor until the measurements match.
+
+## Tested devices
 This is the tested parameters and calibrations for given devices
 
 | Device          | ADC Pin | Conversion Factor |
